@@ -10,6 +10,7 @@ public class BackLogic {
     public boolean ableToArriveAt24Attempt1 (Double[] fourNumbers) {
         boolean ableToGetTo24 = false;
         // for loops to iterate through and assign number positions
+        mainloop:
         for (int w = 0; w < 4; w++) {
             Double number1 = fourNumbers[w];
             Double[] threeNumbers = removeTheElement(fourNumbers, w);
@@ -35,17 +36,12 @@ public class BackLogic {
                                     break;
                                 }
                                 // check to break
-                                if(ableToGetTo24) {break;}
+                                if(ableToGetTo24) {break mainloop;}
                             }
-                            if(ableToGetTo24) {break;}
                         }
-                        if(ableToGetTo24) {break;}
                     }
-                    if(ableToGetTo24) {break;}
                 }
-                if(ableToGetTo24) {break;}
             }
-            if(ableToGetTo24) {break;}
         }
         return ableToGetTo24;
     }
